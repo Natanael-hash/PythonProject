@@ -1,47 +1,96 @@
 import random 
 
 
-user_wins = 0
-computer_wins = 0
-equality_score = 0
-options = ["rock", "paper", "scissors"]
 
-while True:
-    user_input = input("Type Rock/Paper/Scissors or Q to quit: ").lower()
-    if user_input == "q":
-        break
-        
-    if user_input not in  options:
-        continue
-    
-    random_number = random.randint(0, 2)
-    # rock:0 , paper:1 , scissors:2 
-    computer_pick = options[random_number]
-    print("Computer picked: ", computer_pick + ".")
-    
-    if user_input == "rock" and computer_pick == "scissors":
-        print("You won!")
-        user_wins += 1
-        
-    elif user_input == "scissors" and computer_pick == "paper":
-        print("You won!")
-        user_wins += 1
-        
-    elif user_input == "paper" and computer_pick == "rock":
-        print("You won!")
-        user_wins += 1
-    elif user_input == computer_pick:
-        print("Eguality!")
-        equality_score += 1
-        
-    else:
-        print("You lost!")
-        computer_wins += 1
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
 
-print("Equality" , equality_score , "times.")    
-print("You won" , user_wins , "times.")
-print("Computer won" , computer_wins , "times.")
-print("Goodbye!")
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+case = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n")
+options = [rock, paper, scissors]
+len_list = len(options)
+random_case = random.randrange(len_list)
+computer_case = options[random_case]
+
+if case == "0" and computer_case == paper:
+    print("You chose:")
+    print(rock)
+    print("Computer chose:")
+    print(computer_case)
+    print("Computer wins!")
+elif case == "0" and computer_case == rock:
+    print("You chose:")
+    print(rock)
+    print("Computer chose:")
+    print(computer_case)
+    print("It's draw!")
+elif case == "0" and computer_case == scissors:
+    print("You chose:")
+    print(rock)
+    print("Computer chose:")
+    print(computer_case)
+    print("You win!")
+elif case == "1" and computer_case == scissors:
+    print("You chose:")
+    print(paper)
+    print("Computer chose:")
+    print(computer_case)
+    print("Computer wins!")
+elif case == "1" and computer_case == paper:
+    print("You choose:")
+    print(paper)
+    print("Computer choose:")
+    print(computer_case)
+    print("It's draw!")
+elif case == "1" and computer_case == rock:
+    print("You chose:")
+    print(paper)
+    print("Computer chose:")
+    print(computer_case)
+    print("You win!")
+elif case == "2" and computer_case == rock:
+    print("You chose:")
+    print(scissors)
+    print("Computer chose:")
+    print(computer_case)
+    print("Computer wins!")
+elif case == "2" and computer_case == scissors:
+    print("You chose:")
+    print(scissors)
+    print("Computer chose:")
+    print(computer_case)
+    print("It's draw!")
+elif case == "2" and computer_case == paper:
+    print("You chose:")
+    print(scissors)
+    print("Computer chose:")
+    print(computer_case)
+    print("You win!")
+else:
+    print("You press an invalid character!Please select one of this number!")
         
         
         
