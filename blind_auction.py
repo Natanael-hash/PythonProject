@@ -22,7 +22,7 @@ def find_highest_bidder(bidding_record):
         if bid_amount > highest_bidder:
             highest_bidder = bid_amount
             winner = biddder
-    print(f"The winner is {winner} with a bid of {bid_amount} dollars!")
+    print(f"The winner is {winner} with a bid of ${bid_amount}!")
 
 while True:
     player_name = input(" What is your name? ")
